@@ -1,0 +1,3 @@
+s/youremptytestdbnamehere/wordpress_tests/
+s/yourusernamehere/travis/
+s/yourpasswordhere//

@@ -1,0 +1,30 @@
+<phpunit 
+        bootstrap="bootstrap.php"
+        backupGlobals="false"
+        colors="true"
+        >
+    <testsuites>
+        <!-- Wordpress Tests (created for testing wordpress core, we only run some of these for sanity check) -->
+        <testsuite>
+            <file>tests/phpunit/tests/basic.php</file>
+            <file>tests/phpunit/tests/cron.php</file>
+            <file>tests/phpunit/tests/db.php</file>
+            <file>tests/phpunit/tests/functions.php</file>
+            <file>tests/phpunit/tests/post.php</file>
+            <file>tests/phpunit/tests/query.php</file>
+            <file>tests/phpunit/tests/shortcode.php</file>
+            <file>tests/phpunit/tests/taxonomy.php</file>
+            <file>tests/phpunit/tests/term.php</file>
+            <file>tests/phpunit/tests/theme.php</file>
+            <file>tests/phpunit/tests/user.php</file>
+            <file>tests/phpunit/tests/widgets.php</file>
+        </testsuite>
+        <!-- CI-Theme custom tests (read: User generated) -->
+        <testsuite name="CI-Theme Custom Tests">
+            <directory prefix="test-" suffix=".php">custom_tests</directory>
+        </testsuite>
+    </testsuites>
+    <logging>
+        <log type="junit" target="logs/junit.xml" logIncompleteSkipped="false"/>
+    </logging>
+</phpunit>
